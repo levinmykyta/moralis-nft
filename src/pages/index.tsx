@@ -33,7 +33,6 @@ function HomePage() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [nftData, setNftData] = useState<EvmNftish>({} as EvmNftish);
   const handleClick = (nft: EvmNftish) => {
-    console.log(JSON.parse(JSON.stringify(nft.tokenAddress))._value);
     setNftData(nft);
     onOpen();
   };
