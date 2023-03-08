@@ -83,13 +83,18 @@ function HomePage() {
               </Text>
               <Text>
                 <b>Description: </b>
-                {(nftData.metadata as unknown as MetaData)?.description}
+                {((nftData.metadata as unknown as MetaData)?.description ??
+                  "") !== ""
+                  ? (nftData.metadata as unknown as MetaData)?.description
+                  : "No descriptioin"}
               </Text>
             </ModalBody>
 
             <ModalFooter>
               <Button
-                colorScheme="blue"
+                bgColor="gray.900"
+                color="white"
+                _hover={{ bg: "green.300" }}
                 mr={3}
                 onClick={() => {
                   document.location = `https://opensea.io/assets/ethereum/${
